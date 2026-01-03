@@ -1,21 +1,18 @@
 import React from "react";
-// import { useDispatch } from "react-redux";
-// Redux actions will be used later
-// import { removeFromCart, updateQuantity } from "../redux/cartSlice";
+import { useDispatch } from "react-redux";
+import { removeFromCart, updateQuantity } from "../redux/cartSlice";
 
 function CartItem({ item }) {
-//   const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
   const handleRemove = () => {
-    // Will dispatch removeFromCart action later
-    // dispatch(removeFromCart(item.id));
-    console.log("Remove item:", item.title);
+    dispatch(removeFromCart(item.id));
   };
 
   const handleQuantityChange = (amount) => {
-    // Will dispatch updateQuantity action later
-    // dispatch(updateQuantity({ id: item.id, quantity: amount }));
-    console.log("Change quantity for:", item.title, "to", amount);
+    if (amount >= 1) {
+      dispatch(updateQuantity({ id: item.id, quantity: amount }));
+    }
   };
 
   return (
