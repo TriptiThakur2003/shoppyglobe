@@ -30,7 +30,7 @@ function ProductDetail() {
 
   return (
     <div style={{ padding: "20px" }}>
-      <img src={product.thumbnail} alt={product.title} style={{ width: "300px", height: "300px", objectFit: "cover" }} />
+      <img src={product.thumbnail} alt={product.title} style={{ width: "300px", height: "300px", objectFit: "cover" }} loading="lazy" />
       <h2>{product.title}</h2>
       <p>{product.description}</p>
       <p>Price: ₹{product.price}</p>
