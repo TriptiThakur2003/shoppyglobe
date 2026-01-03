@@ -1,15 +1,12 @@
 import React from "react";
-// import { useDispatch } from "react-redux";
-// Redux action will be used later
-// import { addToCart } from "../redux/cartSlice";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../redux/cartSlice";
 
 function ProductItem({ product }) {
-//   const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
   const handleAddToCart = () => {
-    // Will dispatch addToCart action later
-    // dispatch(addToCart(product));
-    console.log("Add to Cart clicked for:", product.title);
+    dispatch(addToCart(product));
   };
 
   return (
