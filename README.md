@@ -113,7 +113,7 @@ src/
 
 ### 1️⃣ Clone the repository
 ```bash
-git clone https://github.com/your-username/ShoppyGlobe.git
+git clone https://github.com/TriptiThakur2003/shoppyglobe.git
 
 
 ```
@@ -131,7 +131,7 @@ npm run dev
 
 📦 GitHub Repository
 
-🔗 GitHub Repo:
+```bash
 https://github.com/TriptiThakur2003/shoppyglobe.git
-
-Note: node_modules is not included in the repository as per submission guidelines.
+```
+ 
