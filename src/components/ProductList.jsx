@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
+import { useSelector } from "react-redux";
 import ProductItem from "./ProductItem";
 import useFetchProducts from "../hooks/useFetchProducts";
 import SearchBar from "./SearchBar";
 
 function ProductList() {
   const { products, loading, error } = useFetchProducts();
-  const [searchTerm, setSearchTerm] = useState("");
+
+  const searchTerm = useSelector((state) => state.search.searchTerm);
 
   const filteredProducts = products.filter((product) =>
     product.title.toLowerCase().includes(searchTerm.toLowerCase())
@@ -16,7 +18,7 @@ function ProductList() {
 
   return (
     <div style={{ padding: "20px" }}>
-      <SearchBar value={searchTerm} onChange={setSearchTerm} />
+      <SearchBar />
       <div style={{ display: "flex", flexWrap: "wrap", gap: "20px" }}>
         {filteredProducts.map((product) => (
           <ProductItem key={product.id} product={product} />
