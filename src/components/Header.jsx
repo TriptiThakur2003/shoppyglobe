@@ -7,14 +7,24 @@ function Header() {
   const cartItems = useSelector((state) => state.cart.items);
 
   return (
-    <header style={{ padding: "10px 20px", display: "flex", justifyContent: "space-between", alignItems: "center", borderBottom: "1px solid #ccc" }}>
-      <nav>
-        <Link to="/" style={{ marginRight: "15px" }}>Home</Link>
-        <Link to="/cart">Cart</Link>
+    <header className="header3d">
+      <nav className="navbar3d">
+        {/* Brand */}
+        <Link to="/" className="brand3d">
+          Shoppy<span>Globe</span>
+        </Link>
+
+        {/* Cart Button */}
+        <Link to="/cart" className="cartWrapper">
+          <button className="cartBtn3d">
+            <i className="bi bi-cart3"></i>
+
+            {cartItems.length > 0 && (
+              <span className="cartBadge">{cartItems.length}</span>
+            )}
+          </button>
+        </Link>
       </nav>
-      <div>
-        🛒 {cartItems.length} items
-      </div>
     </header>
   );
 }

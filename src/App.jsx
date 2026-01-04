@@ -1,18 +1,18 @@
 import React, { Suspense, lazy } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Header from "./components/Header";
+import './App.css'
 
 // Lazy load components
-const ProductList = lazy(() => import("./components/ProductList"));
-const ProductDetail = lazy(() => import("./components/ProductDetail"));
-const Cart = lazy(() => import("./components/Cart"));
-const Checkout = lazy(() => import("./components/Checkout"));
-const NotFound = lazy(() => import("./components/NotFound"));
+const ProductList = lazy(() => import("./pages/ProductList"));
+const ProductDetail = lazy(() => import("./pages/ProductDetail"));
+const Cart = lazy(() => import("./pages/Cart"));
+const Checkout = lazy(() => import("./pages/Checkout"));
+const NotFound = lazy(() => import("./pages/NotFound"));
 
 function App() {
   return (
     <BrowserRouter>
-      <Header />
+      {/* <Header /> */}
       <Suspense fallback={<p>Loading page...</p>}>
         <Routes>
           <Route path="/" element={<ProductList />} />
