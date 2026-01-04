@@ -19,11 +19,13 @@ function ProductList() {
 
   return (
     <Layout>
-      <div style={{ padding: "20px" }}>
+      <div className="container pb-5">
         <SearchBar />
-        <div style={{ display: "flex", flexWrap: "wrap", gap: "20px" }}>
+        <div className="row">
           {filteredProducts.map((product) => (
-            <ProductItem key={product.id} product={product} />
+            <div className="col-md-3 my-2" key={product.id}>
+              <ProductItem product={product} />
+            </div>
           ))}
         </div>
       </div>    

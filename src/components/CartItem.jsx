@@ -21,13 +21,28 @@ function CartItem({ item }) {
       <div style={{ flex: 1 }}>
         <h4>{item.title}</h4>
         <p>Price: ₹{item.price}</p>
-        <div>
-          <button onClick={() => handleQuantityChange(item.quantity - 1)} disabled={item.quantity <= 1}>-</button>
-          <span style={{ margin: "0 10px" }}>{item.quantity}</span>
-          <button onClick={() => handleQuantityChange(item.quantity + 1)}>+</button>
+        
+        <div className="qty-wrapper">
+          <button
+            className="qty-btn"
+            onClick={() => handleQuantityChange(item.quantity - 1)}
+            disabled={item.quantity <= 1}
+          >
+            −
+          </button>
+
+          <span className="qty-value">{item.quantity}</span>
+
+          <button
+            className="qty-btn"
+            onClick={() => handleQuantityChange(item.quantity + 1)}
+          >
+            +
+          </button>
         </div>
+
       </div>
-      <button onClick={handleRemove}>Remove</button>
+      <button className="btn btn-danger" onClick={handleRemove}>Remove</button>
     </div>
   );
 }

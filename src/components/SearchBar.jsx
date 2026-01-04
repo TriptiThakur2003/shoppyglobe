@@ -7,13 +7,17 @@ function SearchBar() {
   const searchTerm = useSelector((state) => state.search.searchTerm);
 
   return (
-    <input
-      type="text"
-      placeholder="Search products..."
-      value={searchTerm}
-      onChange={(e) => dispatch(setSearchTerm(e.target.value))}
-      style={{ padding: "5px 10px", width: "300px", marginBottom: "20px" }}
-    />
+    <>
+      <label htmlFor="searchInput" style={{visibility: 'hidden'}}>Search Products</label>
+      <input
+        id="searchInput"
+        type="text"
+        className="form-control search-input mb-4 py-3 px-4"
+        placeholder="Search products..."
+        value={searchTerm}
+        onChange={(e) => dispatch(setSearchTerm(e.target.value))}
+      />
+    </>
   );
 }
 
